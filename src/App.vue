@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center" @click="$router.push('/')">
+      <div class="d-flex align-center" @click="goToHome">
         <v-icon>mdi-calculator</v-icon>
         <h2 class="ml-2 mt-1">Clac</h2>
       </div>
@@ -17,7 +17,14 @@
 
 <script lang="ts">
 import Vue from "vue";
-export default Vue.extend({
-  data: () => ({}),
-});
+import Component from "vue-class-component";
+
+@Component
+export default class App extends Vue {
+  goToHome() {
+    if (this.$route.path !== "/") {
+      this.$router.push("/");
+    }
+  }
+}
 </script>

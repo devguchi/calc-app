@@ -33,7 +33,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { required, between, numeric, integer } from "vuelidate/lib/validators";
+import { required, between, decimal, integer } from "vuelidate/lib/validators";
 
 @Component({
   validations: {
@@ -43,8 +43,7 @@ import { required, between, numeric, integer } from "vuelidate/lib/validators";
       between: between(1, 1000000000),
     },
     discountRate: {
-      required,
-      numeric,
+      decimal,
       between: between(0, 100),
     },
   },
@@ -73,7 +72,9 @@ export default class Discount extends Vue {
 
   calc(): number {
     const price = parseInt(this.price);
-    const discountRate = parseFloat(this.discountRate);
+    const discountRate = this.discountRate
+      ? parseFloat(this.discountRate)
+      : 0;
     return (price * (100 - discountRate)) / 100;
   }
 }
