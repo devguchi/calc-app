@@ -72,9 +72,7 @@ export default class Discount extends Vue {
 
   calc(): number {
     const price = parseInt(this.price);
-    const discountRate = this.discountRate
-      ? parseFloat(this.discountRate)
-      : 0;
+    const discountRate = this.discountRate ? parseFloat(this.discountRate) : 0;
     return (price * (100 - discountRate)) / 100;
   }
 }

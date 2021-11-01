@@ -21,7 +21,7 @@ import Component from "vue-class-component";
 
 @Component
 export default class App extends Vue {
-  goToHome() {
+  goToHome(): void {
     if (this.$route.path !== "/") {
       this.$router.push("/");
     }
