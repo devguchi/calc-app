@@ -9,6 +9,7 @@
           clearable
           @change="$v.$touch"
           :error-messages="errMsgPrice"
+          type="number"
         ></v-text-field>
         <v-text-field
           v-model="discountRate"
@@ -17,24 +18,21 @@
           clearable
           :error-messages="errMsgDiscountRate"
           @change="$v.$touch"
+          type="number"
         ></v-text-field>
       </v-card-text>
     </v-card>
-
-    <v-card class="mt-3" color="secondary" v-if="result !== ''">
-      <v-card-subtitle>結果</v-card-subtitle>
-      <v-card-text>
-        <p class="text-h5 text-right pa-0 ma-0">{{ result }} 円</p>
-      </v-card-text>
-    </v-card>
+    <CalcResult :result="result" unit="円"/>
   </v-card>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { required, between, decimal, integer } from "vuelidate/lib/validators";
+import CalcResult from '@/components/CalcResult.vue'
 
 @Component({
+  components: {CalcResult},
   validations: {
     price: {
       required,
