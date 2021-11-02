@@ -1,5 +1,7 @@
 # calc-app
 
+![Image from Gyazo](https://i.gyazo.com/52f03f41f77a59f5163af20348068fdd.png)
+
 ## Project setup
 ```
 npm install
