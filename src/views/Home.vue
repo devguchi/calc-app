@@ -19,18 +19,15 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-// import HelloWorld from "../components/HelloWorld.vue";
+import { Component, Vue } from "vue-property-decorator";
 
-export default Vue.extend({
-  components: {},
-  data: () => ({
-    menuList: [
-      {
-        label: "〇%引き",
-        to: "/discount",
-      },
-    ],
-  }),
-});
+@Component
+export default class Home extends Vue {
+  menuList = [
+    {
+      label: "〇%引き",
+      to: "/discount",
+    },
+  ];
+}
 </script>

@@ -3,7 +3,7 @@
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center" @click="goToHome">
         <v-icon>mdi-calculator</v-icon>
-        <h2 class="ml-2 mt-1">Clac</h2>
+        <h2 class="ml-2 mt-1">Calc</h2>
       </div>
     </v-app-bar>
 
@@ -16,8 +16,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class App extends Vue {
