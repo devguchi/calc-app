@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Discount from "../views/Discount.vue";
+import DiscountApplicationLimit from "@/views/DiscountApplicationLimit.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: "/discount",
     name: "Discount",
     component: Discount,
+  },
+  {
+    path: "/discount-application-limit",
+    name: "DiscountApplicationLimit",
+    component: DiscountApplicationLimit,
   },
 ];
 

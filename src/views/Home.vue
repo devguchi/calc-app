@@ -28,6 +28,10 @@ export default class Home extends Vue {
       label: "〇%引き",
       to: "/discount",
     },
+    {
+      label: "割引適用上限",
+      to: "/discount-application-limit",
+    },
   ];
 }
 </script>

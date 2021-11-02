@@ -22,17 +22,17 @@
         ></v-text-field>
       </v-card-text>
     </v-card>
-    <CalcResult :result="result" unit="円"/>
+    <CalcResult title="割引後価格" :result="result" unit="円" />
   </v-card>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { required, between, decimal, integer } from "vuelidate/lib/validators";
-import CalcResult from '@/components/CalcResult.vue'
+import CalcResult from "@/components/CalcResult.vue";
 
 @Component({
-  components: {CalcResult},
+  components: { CalcResult },
   validations: {
     price: {
       required,
